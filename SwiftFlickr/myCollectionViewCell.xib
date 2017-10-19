@@ -19,22 +19,33 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kWI-D8-WfX">
-                        <rect key="frame" x="0.0" y="0.0" width="205" height="144"/>
+                        <rect key="frame" x="0.0" y="0.0" width="205" height="123.5"/>
                     </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VSB-dH-S8r">
+                        <rect key="frame" x="0.0" y="123.5" width="205" height="20.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
             </view>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="kWI-D8-WfX" secondAttribute="bottom" id="29I-uW-Fli"/>
-                <constraint firstItem="kWI-D8-WfX" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="2nO-JO-vXx"/>
-                <constraint firstAttribute="trailing" secondItem="kWI-D8-WfX" secondAttribute="trailing" id="DOK-vj-d2x"/>
-                <constraint firstItem="kWI-D8-WfX" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="ZYY-Va-szd"/>
+                <constraint firstItem="kWI-D8-WfX" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="4kc-Ep-kY3"/>
+                <constraint firstItem="kWI-D8-WfX" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="5Ib-Nn-yIM"/>
+                <constraint firstItem="VSB-dH-S8r" firstAttribute="top" secondItem="kWI-D8-WfX" secondAttribute="bottom" id="CLd-1J-S3N"/>
+                <constraint firstAttribute="bottom" secondItem="VSB-dH-S8r" secondAttribute="bottom" id="Ja6-sp-tUp"/>
+                <constraint firstAttribute="trailing" secondItem="VSB-dH-S8r" secondAttribute="trailing" id="NaZ-gL-seZ"/>
+                <constraint firstItem="VSB-dH-S8r" firstAttribute="top" secondItem="kWI-D8-WfX" secondAttribute="bottom" id="RgW-Ln-8Hs"/>
+                <constraint firstAttribute="trailing" secondItem="kWI-D8-WfX" secondAttribute="trailing" id="SdK-pf-q4f"/>
+                <constraint firstItem="VSB-dH-S8r" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="kzn-d2-glW"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="205" height="144"/>
             <connections>
+                <outlet property="imageName" destination="VSB-dH-S8r" id="dhU-Oa-y5l"/>
                 <outlet property="myImageView" destination="kWI-D8-WfX" id="rks-RF-tyT"/>
             </connections>
-            <point key="canvasLocation" x="146.5" y="180"/>
+            <point key="canvasLocation" x="-342" y="96"/>
         </collectionViewCell>
     </objects>
 </document>

@@ -44,6 +44,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
                 let data = try? Data(contentsOf: url!) //make sure your image in this url does exist, otherwise unwrap in a if let check / try-catch
                 DispatchQueue.main.async {
                     cell.myImageView?.image = UIImage(data: data!)
+                    cell.imageName?.text = (self.flickrResults[indexPath.row]["title"]) as? String
                 }
             }
         }
@@ -63,11 +64,16 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         let myString = "https://farm" + item2 + ".staticflickr.com/" + ((flickrResults[indexPath.row]["server"]) as! String) + "/" + ((flickrResults[indexPath.row]["id"]) as! String) + "_" + ((flickrResults[indexPath.row]["secret"]) as! String) + ".jpg"
         
         let url = URL(string: myString)
-        let data = try? Data(contentsOf: url!) //make sure your image in this url does exist, otherwise unwrap in a if let check / try-catch
-        
-        selectedObject = data
-        performSegue(withIdentifier: "show", sender: nil)
-        collectionView.deselectItem(at: indexPath, animated: true)
+        if(UIApplication.shared.canOpenURL(url!)){
+            DispatchQueue.global().async {
+                let data = try? Data(contentsOf: url!) //make sure your image in this url does exist, otherwise unwrap in a if let check / try-catch
+                DispatchQueue.main.async {
+                    self.selectedObject = data
+                    self.performSegue(withIdentifier: "show", sender: nil)
+                    collectionView.deselectItem(at: indexPath, animated: true)
+                }
+            }
+        }
     }
 
     override func viewDidLoad() {
